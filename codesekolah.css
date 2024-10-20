@@ -1,0 +1,547 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url('bibir.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    backdrop-filter: blur(8px);
+    opacity: 95%;
+}
+
+/* CSS Umum */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+section {
+    width: 100%;
+    height: 100%;
+}
+
+/* Navigasi */
+section nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    left: 0;
+    background: pink;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    animation: slideDown 0.5s ease-out; /* Transisi masuk untuk navigasi */
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+section nav .logo img {
+    width: 100px;
+    cursor: pointer;
+    margin: 7px 0;
+    transition: transform 0.3s; /* Smooth scaling for logo */
+}
+
+section nav .logo img:hover {
+    transform: scale(1.1); /* Enlarge logo on hover */
+}
+
+section nav ul {
+    list-style: none;
+}
+
+section nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+section nav ul li a {
+    text-decoration: none;
+    color: rgb(128, 0, 38);
+    font-weight: 500;
+    font-size: 17px;
+    transition: color 0.3s; /* Smooth color change */
+}
+
+section nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: blueviolet;
+    display: block;
+    transition: width 0.3s linear; /* Smooth underline effect */
+}
+
+section nav ul li a:hover::after {
+    width: 100%;
+}
+
+section nav ul li a:hover {
+    color: deeppink;
+}
+
+section nav .icon i {
+    font-size: 18px;
+    color: black;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s; /* Smooth color and scaling */
+}
+
+section nav .icon i:hover {
+    color: deeppink;
+    transform: scale(1.2); /* Enlarge icons on hover */
+}
+
+/* Konten Utama */
+section .main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    top: 130px;
+    opacity: 0; /* Mulai dari tidak terlihat */
+    animation: fadeInUp 0.8s forwards; /* Transisi masuk untuk konten utama */
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Mulai dari bawah */
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section .main .men_text h1 {
+    font-size: 60px;
+    position: relative;
+    top: -30px;
+    animation: fadeIn 0.5s ease-out; /* Transisi masuk untuk teks utama */
+}
+
+section .main .men_text h1 span {
+    margin-left: 15px;
+    color: deeppink;
+    font-family: "MV Boli", cursive;
+    line-height: 22px;
+    font-size: 70px;
+}
+
+section .main .main_image img {
+    width: 700px;
+    left: 50px;
+    animation: fadeIn 0.6s ease-out; /* Transisi masuk untuk gambar */
+}
+
+section .main_btn {
+    background-color: deeppink;
+    position: relative;
+    left: 123px;
+    top: 30px;
+    width: 150px;
+    cursor: pointer;
+    padding: 20px;
+    transition: background-color 0.3s; /* Smooth background color change */
+}
+
+section .main_btn a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+section .main_btn i {
+    color: white;
+    transition: transform 0.3s; /* Smooth movement for icon */
+}
+
+section .main_btn i:hover {
+    transform: translateX(7px);
+}
+
+/* Slider */
+.slides {
+    display: none;
+    width: 600px;
+    height: auto;
+    margin-left: 0.5cm;
+    border-radius: 10px;
+}
+
+.active {
+    display: flex;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*about*/
+
+.About{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+    margin-top: 100px;
+}
+
+.About .about_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.About .about_main .about_text h1 span{
+    color: deeppink;
+    margin-right: 15px;
+    font-family: mv boli;
+}
+
+.About .about_main .about_text h1{
+    font-size: 150px;
+    position: relative;
+    top: 30px;
+    bottom: 10px;
+}
+
+.About .about_main .about_text h3{
+    font-size: 50px;
+    margin: 10px 0 10px 0;
+}
+
+.About .about_main .about_text p{
+    width: 650px;
+    text-align: justify;
+    margin-right: 30px;
+    line-height: 22px;
+}
+
+/*review*/
+
+.review{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+
+.review h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.review h1 span{
+    margin-left: 15px;
+    color: deeppink;
+    font-family: mv boli;
+}
+
+.review h1 span::after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: deeppink;
+    position: relative;
+    bottom: 15px;
+    display: block;
+}
+
+.review .review_box{
+    width: 95%;
+    margin: 70px auto;
+    display: flex;
+}
+
+.review .review_box .review_card{
+    width: 300px;
+    height: 480px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin: 0 8px;
+}
+
+.review .review_box .review_card .review_profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_profile{
+    transform: translateY(-60px);
+}
+
+.review .review_box .review_card .review_profile img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border: 5px solid #cccccc;
+}
+
+.review .review_box .review_card .review_text{
+    text-align: center;
+}
+
+.review .review_box .review_card .review_text .name{
+    color: crimson;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .name{
+    transform: translateY(-50px);
+}
+
+.review .review_box .review_card .review_text .review_icon{
+    color: deeppink;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .review_icon{
+    transform: translateY(-30px);
+}
+
+.review .review_box .review_card .review_text .review_social i{
+    margin: 5px 1px;
+    font-size: 15px;
+    opacity: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text .review_social i{
+    opacity: 1;
+    transform: translateY(-8px);
+}
+
+.review .review_box .review_card .review_text p{
+    text-align: center;
+    line-height: 22px;
+    transition: 0.3s;
+}
+
+.review .review_box .review_card:hover .review_text p{
+    margin-top: 5px;
+}
+
+/*facilities*/
+
+.facilities{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.facilities h1{
+    font-size: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.facilities h1 span{
+    margin-left: 15px;
+    color: deeppink;
+    font-family: mv boli;
+}
+
+.facilities .row{
+    width: 95%;
+    margin: 50px;
+    display: flex;
+}
+
+.facilities .row .facilities-col{
+    width: 350px;
+    height: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 8px 20px;
+    margin: 0 30px;
+}
+
+.facilities .row .facilities-col img{
+    
+    width: 300px;
+    height: 200px;
+    object-position: center;
+    border-radius: 100%;
+}
+
+.facilities .row .facilities-col h3{
+    text-align: center;
+    line-height: 22px;
+    transition: 0.3s;
+    text-decoration: none;
+}
+
+.facilities .row .facilities-col h3:hover{
+    margin-top: 5px;
+    color: deeppink;
+    text-decoration: none;
+}
+
+
+
+/*footer*/
+footer {
+    box-sizing: border-box;
+    background-color: crimson;
+    margin-bottom: 0px;
+}
+
+.footerCon {
+    width: 100%;
+    padding: 0px 0px 0px;
+}
+
+.medsos {
+    display: flex;
+    justify-content: center;
+}
+
+.medsos a {
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    margin: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth scaling and color */
+}
+
+.medsos a:hover {
+    background-color: deeppink;
+    transform: scale(1.2); /* Enlarge icon on hover */
+}
+
+.medsos a i {
+    font-size: 33px;
+    color: black;
+    opacity: 0.9;
+}
+
+.footer_nav {
+    margin: 10px 0;
+}
+
+.footer_nav ul {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer_nav ul li a {
+    color: rgb(156, 0, 65);
+    margin: 100px;
+    text-decoration: none;
+    font-size: 15px;
+    opacity: 0.7;
+    transition: color 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Smooth color and opacity */
+}
+
+.footer_nav ul li a:hover {
+    opacity: 1;
+    color: blueviolet;
+    text-shadow: 10%;
+    font-size: larger;
+    font-style: italic;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer_bottom {
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer_bottom p {
+    color: white;
+}
+
+.footer_bottom p span {
+    opacity: 0.7;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 400;
+    margin: 0px 5px;
+    color: deeppink;
+    font-style: italic;
+}
+
+/* Tambahkan ini di bagian atas CSS yang ada */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Geser sedikit ke bawah */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Kembali ke posisi semula */
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Geser dari kiri */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Kembali ke posisi semula */
+    }
+}
+
+/* Terapkan efek fade-in untuk body */
+body {
+    animation: fadeIn 0.5s ease-out; /* Tambahkan animasi fade-in ke body */
+}
+
+/* Terapkan efek slide-in untuk elemen yang diinginkan */
+.blog-heading {
+    animation: slideIn 0.7s ease-out; /* Animasi untuk judul blog */
+}
+
+.blog-container {
+    animation: fadeIn 0.8s ease-out; /* Animasi untuk setiap blog card */
+}
+
+/* Terapkan animasi masuk pada footer */
+.footerCon {
+    animation: fadeIn 0.6s ease-out; /* Animasi untuk footer */
+}
